@@ -21,12 +21,5 @@ public class Demo2 {
         }
     }
 }
-//
-//class CustomRejectionHandler implements RejectedExecutionHandler{
-//
-//    @Override
-//    public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-//        System.out.println("task rejected: "+r.toString());
-//    }
-//}
+
 

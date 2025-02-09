@@ -11,7 +11,7 @@ class SharedResource{
     }
 
 }
-public class Atomic {
+public class WithoutAtomic {
     public static void main(String[] args) {
         SharedResource sharedResource = new SharedResource();
         for (int i=0; i<400; i++){

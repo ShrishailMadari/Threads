@@ -1,13 +1,18 @@
 package threadpoolececutor;
 
-import java.util.concurrent.*;
+import java.util.Arrays;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.RejectedExecutionHandler;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class Demo1 {
     public static void main(String[] args) {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 4, 10, TimeUnit.MINUTES,
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 2, 10, TimeUnit.MINUTES,
                 new ArrayBlockingQueue<>(2), new CustomThreadFactory(), new CustomRejectionHandler());
 
-        for (int i = 0; i <= 4; i++) {
+        for (int i = 0; i <= 10; i++) {
             threadPoolExecutor.submit(
                     () -> {
                         try {
@@ -15,7 +20,7 @@ public class Demo1 {
                         } catch (InterruptedException e) {
                             throw new RuntimeException(e.getMessage());
                         }
-                        System.out.println("task processed by: " + Thread.currentThread().getName());
+                        System.out.println("task processed by: " + Arrays.toString(Thread.currentThread().getStackTrace()));
                     }
             );
         }
@@ -38,8 +43,7 @@ class CustomRejectionHandler implements RejectedExecutionHandler {
 
     @Override
     public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-        Thread thread = new Thread(() -> {
-            System.out.println(r.toString() + " " + Thread.currentThread().getName());
-        });
+
+        System.out.println("task rejected : "+r.toString());
     }
 }

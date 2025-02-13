@@ -1,4 +1,4 @@
-package demos;
+package GenericClass;
 class GenericsDemoThree<B>{
     B value;
 

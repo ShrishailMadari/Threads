@@ -1,5 +1,8 @@
 package threadmethods;
-
+/*
+* Join():
+* it will wait the other thread to finish the execution
+* */
 public class JoinMethod {
     public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(() -> {

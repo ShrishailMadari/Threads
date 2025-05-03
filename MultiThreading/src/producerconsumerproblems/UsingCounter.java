@@ -13,7 +13,7 @@ public class UsingCounter {
             while (true) {
                 int i = 0;
                 try {
-                    if (queue.remainingCapacity() == 0) {
+                    if (queue.remainingCapacity() != 0) {
                         System.out.println("Queue is full, waiting for consumer to consume");
                     }
                     queue.put(i);
@@ -29,7 +29,7 @@ public class UsingCounter {
         Thread consumer = new Thread(() -> {
             while (true) {
                 try {
-                    if (queue.isEmpty()) {
+                    if (!queue.isEmpty()) {
                         System.out.println("Queue is full, waiting for consumer to consume");
                     }
                     System.out.println("Produced: " + queue.take());

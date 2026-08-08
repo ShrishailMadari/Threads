@@ -14,6 +14,6 @@ public class Demo2 {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
         Class eagleClass = Class.forName("reflection.Eagle");
         Object object = eagleClass.newInstance();
-        eagleClass.getMethod("jh",true,);
+//        eagleClass.getMethod("jh",true,);
     }
 }

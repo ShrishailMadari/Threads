@@ -3,19 +3,14 @@
 public class Main {
     public static void main(String[] args) {
 
-        Bank bank = new Bank();
-        Thread thread1 = new Thread(() -> {
-            bank.deposit("Thread-1");
+      Thread thread1 = new Thread(()->{
+
+      });
+
+        Thread thread2 = new Thread(()->{
+
         });
-
-
-        Thread thread2= new Thread(()->{
-            bank.deposit("Thread-2");
-        });
-
-
         thread1.start();
         thread2.start();
-
     }
 }

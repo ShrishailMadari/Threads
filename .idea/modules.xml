@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Atomic/Atomic.iml" filepath="$PROJECT_DIR$/Atomic/Atomic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExecutoreFramWork/ExecutoreFramWork.iml" filepath="$PROJECT_DIR$/ExecutoreFramWork/ExecutoreFramWork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Synchronised/Synchronised.iml" filepath="$PROJECT_DIR$/Synchronised/Synchronised.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Threads.iml" filepath="$PROJECT_DIR$/.idea/Threads.iml" />
     </modules>
   </component>
